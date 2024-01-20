@@ -207,5 +207,9 @@ def assign_second_work(workers, tasks: product.tasks):
 tasks = product.tasks 
 assign_second_work(workers, tasks)
 # see the result.
-for worker in workers:
-  print(worker.name, worker.tasks)
+# for worker in workers:
+#   print(worker.name, worker.tasks)
+
+for station in stations:
+  for worker in station.workers:
+    print(f"station: {station.name} | worker: {worker[0].name} | tasks: {[task.name for task in worker[0].tasks]}")
